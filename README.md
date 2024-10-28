@@ -33,7 +33,7 @@ Step 6: Test the network for accuracy<br>
 Step 7: Plot the Input space and Hidden space of RBF NN for XOR classification.
 
 <H3>PROGRAM:</H3>
-```
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -88,6 +88,7 @@ def predict_matrix(point, weights):
     A = np.array([gaussian_rbf_0, gaussian_rbf_1, 1])
     return np.round(A.dot(weights))
 
+
 x1 = np.array([0, 0, 1, 1])
 x2 = np.array([0, 1, 0, 1])
 ys = np.array([0, 1, 1, 0])
@@ -98,17 +99,17 @@ mu2 = np.array([1, 0])
 
 w = end_to_end(x1, x2, ys, mu1, mu2)
 
+
 print(f"Input:{np.array([0, 0])}, Predicted: {predict_matrix(np.array([0, 0]), w)}")
 print(f"Input:{np.array([0, 1])}, Predicted: {predict_matrix(np.array([0, 1]), w)}")
 print(f"Input:{np.array([1, 0])}, Predicted: {predict_matrix(np.array([1, 0]), w)}")
 print(f"Input:{np.array([1, 1])}, Predicted: {predict_matrix(np.array([1, 1]), w)}")
 
 
-```
 
 <H3>OUTPUT:</H3>
 
-![Screenshot 2024-10-28 154348](https://github.com/user-attachments/assets/ebcb4b6f-5605-475d-951c-72e422dafc60)
+![image](https://github.com/user-attachments/assets/4d973b3b-2003-4d92-b908-33027669ebc6)
 
 
 <H3>Result:</H3>
