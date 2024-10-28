@@ -34,15 +34,14 @@ Step 7: Plot the Input space and Hidden space of RBF NN for XOR classification.
 
 <H3>PROGRAM:</H3>
 
-import numpy as np
-import matplotlib.pyplot as plt
+   import numpy as np
+   import matplotlib.pyplot as plt
+   def gaussian_rbf(x, landmark, gamma=1):
+       return np.exp(-gamma * np.linalg.norm(x - landmark)**2)
+   def end_to_end(X1, X2, ys, mu1, mu2):
+       from_1 = [gaussian_rbf(np.array([X1[i], X2[i]]), mu1) for i in range(len(X1))]
+       from_2 = [gaussian_rbf(np.array([X1[i], X2[i]]), mu2) for i in range(len(X1))]
 
-def gaussian_rbf(x, landmark, gamma=1):
-    return np.exp(-gamma * np.linalg.norm(x - landmark)**2)
-
-def end_to_end(X1, X2, ys, mu1, mu2):
-    from_1 = [gaussian_rbf(np.array([X1[i], X2[i]]), mu1) for i in range(len(X1))]
-    from_2 = [gaussian_rbf(np.array([X1[i], X2[i]]), mu2) for i in range(len(X1))]
 
     plt.figure(figsize=(13, 5))
 
